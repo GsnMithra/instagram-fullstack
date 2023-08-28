@@ -1,3 +1,3 @@
 # instagram-fullstack
 
-backend code only, frontend available at https://github.com/GsnMithra/instagram-clone
+frontend seperately found at: https://github.com/GsnMithra/instagram-clone
