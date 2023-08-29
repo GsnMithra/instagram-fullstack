@@ -1,3 +1,11 @@
 # instagram-fullstack
 
-frontend seperately found at: https://github.com/GsnMithra/instagram-clone
+## dependencies
+
+install required dependencies using `npm i`
+
+## starting server
+create file named `creds.js` and add this line `module.exports = {DB_URI: '<your_mongo_uri>'}`,
+modify `<your_mongo_uri>` with you mongodb uri.
+
+start the backend using `node server.js` 
