@@ -15,14 +15,17 @@ app.post ('/register', (req, res) => {
 app.post ('/login', (req, res) => {
     async function loginUser (body)  {
         const { username, password } = body
-        const user = await db.findOne ({ username: username })
         let response = {
             exists: true,
             credentials: false
         }
 
-        if (user != null) {
-            response.credentials = (user.password === password) ? true : false;
+        const user = await db.findOne ({ username: username })
+        if (user != null) { 
+            if (user.username == username)
+                response.credentials = (user.password === password) ? true : false;
+            else 
+                response.exists = false;
         } else 
             response.exists = false
         
