@@ -40,7 +40,7 @@ app.post ('/register', (req, res) => {
         
                     newUser.save ()
                         .then ((savedUser) => {
-                            console.log ('user saved')
+                            console.log ('Saved..!')
                         })
                         .catch ((e) => {
                             console.error (e);
