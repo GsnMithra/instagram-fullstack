@@ -19,6 +19,15 @@ const instagramUser = new mongoose.Schema ({
     password: {
         type: String,
         required: true
+    },
+
+    dateofbirth: {
+        type: {
+            month: Number,
+            date: Number,
+            year: Number
+        },
+        required: true
     }
 });
 

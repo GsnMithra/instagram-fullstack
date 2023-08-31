@@ -15,7 +15,8 @@ app.use (express.urlencoded ({ extended: false }))
 
 app.post ('/register', (req, res) => {
     async function createUser (body) {
-        const { mailornum, fullname, username, password } = body
+        const { mailornum, fullname, username, password, dateofbirth } = body
+        console.log (dateofbirth)
         // fullname = fullname.toLowerCase ().split (' ').map (word => word.charAt (0).toUpperCase () + word.slice (1)).join (' ')
         
         let response = {
@@ -36,6 +37,7 @@ app.post ('/register', (req, res) => {
                         emailphone: mailornum,
                         fullname: fullname,
                         username: username,
+                        dateofbirth: dateofbirth,
                         password: hash
                     })
         
