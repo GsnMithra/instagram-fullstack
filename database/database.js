@@ -6,7 +6,6 @@ mongoose.connect (creds.DB_URI, {
     useUnifiedTopology: true,
 });
 
-
 mongoose.connection
     .once ('open', () => console.log ('Atlas connected!'))
     .on ('error', (e) => console.log (e))

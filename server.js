@@ -1,7 +1,6 @@
 const express = require ('express')
 const cors = require ('cors')
 const db = require ('./database/schema')
-
 const bcrypt = require ('bcrypt')
 const salt = require ('./creds')
 const saltRounds = salt.SALT_ROUNDS
@@ -15,9 +14,8 @@ app.use (express.urlencoded ({ extended: false }))
 
 app.post ('/register', (req, res) => {
     async function createUser (body) {
-        const { mailornum, fullname, username, password, dateofbirth } = body
-        console.log (dateofbirth)
-        // fullname = fullname.toLowerCase ().split (' ').map (word => word.charAt (0).toUpperCase () + word.slice (1)).join (' ')
+        let { mailornum, fullname, username, password, dateofbirth } = body
+        fullname = fullname.toLowerCase ().split (' ').map (word => word.charAt (0).toUpperCase () + word.slice (1)).join (' ')
         
         let response = {
             exists: false,
@@ -42,9 +40,7 @@ app.post ('/register', (req, res) => {
                     })
         
                     newUser.save ()
-                        .then ((savedUser) => {
-                            console.log ('Saved..!')
-                        })
+                        .then ((savedUser) => {})
                         .catch ((e) => {
                             console.error (e);
                         })
